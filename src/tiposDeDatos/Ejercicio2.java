@@ -5,8 +5,8 @@ import java.text.DecimalFormat;
 
 public class Ejercicio2 {
     public static void main(String[] args) {
-        float precioBollo = 0.87f;
-        float precioQuesoKg = 13.10f;
+        final float precioBollo = 0.87f;
+        final float precioQuesoKg = 13.10f;
 
         float precioBocadilloQueso = precioBollo + precioQuesoKg / 1000 * 150;
 
@@ -15,6 +15,7 @@ public class Ejercicio2 {
         formatPrice.setRoundingMode(RoundingMode.DOWN);
         System.out.println("El precio del bocadillo de queso es: " + formatPrice.format(precioBocadilloQueso) + "€.");
         */
+
         System.out.println("El precio del bocadillo de queso es: " + Math.floor(precioBocadilloQueso*100)/100 + "€.");
     }
 }
