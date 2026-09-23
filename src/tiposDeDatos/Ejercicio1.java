@@ -2,9 +2,9 @@ package tiposDeDatos;
 
 public class Ejercicio1 {
     public static void main(String[] args) {
-        int poblacionAsturias = 1042000;
-        int poblacionMadrid = 6464000;
-        long poblacionMundial = 7463370459L;
+        final int poblacionAsturias = 1042000;
+        final int poblacionMadrid = 6464000;
+        final long poblacionMundial = 7463370459L;
 
         System.out.println("La población de Asturias y Madrid es: " + (poblacionAsturias+poblacionMadrid));
         System.out.println("La población mundial es: " + poblacionMundial);
