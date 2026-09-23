@@ -5,10 +5,11 @@ import java.text.DecimalFormat;
 
 public class Ejercicio2 {
     public static void main(String[] args) {
-        final float precioBollo = 0.87f;
-        final float precioQuesoKg = 13.10f;
+        final float PRECIO_BOLLO = 0.87f;
+        final float PRECIO_QUESO_KG = 13.10f;
+        final float GRAMOS_BOCADILLO = 0.15f;
 
-        float precioBocadilloQueso = precioBollo + precioQuesoKg / 1000 * 150;
+        float precioBocadilloQueso = PRECIO_BOLLO + PRECIO_QUESO_KG / GRAMOS_BOCADILLO;
 
         /*
         DecimalFormat formatPrice = new DecimalFormat("##.##");
