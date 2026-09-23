@@ -3,13 +3,13 @@ package tiposDeDatos;
 public class Ejercicio5 {
     public static void main(String[] args) {
 
-        byte edadJuan = 20;
-        byte edadPedro = (byte) (edadJuan+1);
-        short sueldoJuan = 1980;
-        short sueldoPedro = 800;
+        final byte EDAD_JUAN = 20;
+        byte edadPedro = (byte) (EDAD_JUAN+1);
+        final short SUELDO_JUAN = 1980;
+        final short SUELDO_PEDRO = 800;
 
-        System.out.println("Edad Juan: " + edadJuan + "\nEdad Pedro: " + edadPedro);
-        System.out.println("Entre los dos ganan al mes: " + (sueldoJuan + sueldoPedro) + "€. ");
+        System.out.println("Edad Juan: " + EDAD_JUAN + "\nEdad Pedro: " + edadPedro);
+        System.out.println("Entre los dos ganan al mes: " + (SUELDO_JUAN + SUELDO_PEDRO) + "€. ");
     }
 }
 

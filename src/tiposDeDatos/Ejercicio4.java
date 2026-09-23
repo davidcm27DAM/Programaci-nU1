@@ -2,8 +2,8 @@ package tiposDeDatos;
 
 public class Ejercicio4 {
     public static void main(String[] args) {
-        boolean sorpresa = false;
-        boolean opuesto = !sorpresa;
+        final boolean SORPRESA = false;
+        boolean opuesto = !SORPRESA;
 
         System.out.println("El valor es " + opuesto);
 
