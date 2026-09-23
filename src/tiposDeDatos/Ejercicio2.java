@@ -17,7 +17,8 @@ public class Ejercicio2 {
         System.out.println("El precio del bocadillo de queso es: " + formatPrice.format(precioBocadilloQueso) + "€.");
         */
 
-        System.out.println("El precio del bocadillo de queso es: " + Math.floor(precioBocadilloQueso*100)/100 + "€.");
+        // System.out.println("El precio del bocadillo de queso es: " + Math.floor(precioBocadilloQueso*100)/100 + "€.");
+        System.out.printf("El precio del bocadillo de queso es: %.2f €. ", precioBocadilloQueso);
     }
 }
 
