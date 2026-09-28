@@ -1,21 +1,29 @@
 package ejerciciosExtra;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class ReintegroSorteo {
     public static void main(String[] args) {
         Random randomNum = new Random();
         final int premiado = randomNum.nextInt(100000);
-        final int boleto = randomNum.nextInt(100000);
 
         System.out.println("El número premiado es el " + premiado);
-        System.out.println("Tu número de boleto es el " + boleto);
+        int numBoleto = pedirNumeroBoleto();
+        System.out.println("Tu número de boleto es el " + numBoleto);
 
-        if (comprobarReintegro(premiado, boleto)) {
+        if (comprobarReintegro(premiado, numBoleto)) {
             System.out.println("¡Tu número ha conseguido el reintegro! ");
         } else {
             System.out.println("Lo sentimos, tu número no ha conseguido el reintegro. ");
         }
+    }
+
+    private static int pedirNumeroBoleto(){
+        Scanner introducirNumero = new Scanner(System.in);
+        System.out.println("Introduce tu número de boleto: ");
+        int numBoleto = introducirNumero.nextInt();
+        return numBoleto;
     }
 
     private static boolean comprobarReintegro(int premiado, int boleto) {
