@@ -5,18 +5,19 @@ public class OperadoresLogicos {
 
         boolean frio = false;
 
+        System.out.println("a): " + !frio);
+
         boolean bueno = true;
         boolean bonito = true;
         boolean barato = true;
         boolean oportunidad = (bueno & bonito & barato);
 
+        System.out.println("b): " + oportunidad);
+
         boolean llueve = true;
         boolean riego = false;
         boolean mojado = llueve || riego;
 
-
-        System.out.println("a): " + !frio);
-        System.out.println("b): " + oportunidad);
         System.out.println("c): " + mojado);
 
     }

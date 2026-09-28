@@ -22,9 +22,17 @@ public class ReintegroSorteo {
     private static int pedirNumeroBoleto(){
         Scanner introducirNumero = new Scanner(System.in);
         int numBoleto;
+        int i;
         do{
             System.out.println("Introduce tu número de boleto: ");
-            numBoleto = introducirNumero.nextInt();
+            String numBoletoTeclado = introducirNumero.nextLine();
+            /*
+            for (i = 0, i <= numBoletoTeclado.length(), i++){
+                numBoletoTeclado.isLetter(i);
+            }
+            */
+
+            numBoleto = Integer.parseInt(numBoletoTeclado);
             if (numBoleto > 99999 || numBoleto < 0){
                 System.out.println("El número es demasiado largo, vuelve a intentarlo. ");
             }

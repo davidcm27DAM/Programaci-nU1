@@ -16,7 +16,7 @@ public class OperadoresAritmeticos {
 
         System.out.println("Resultado a): "+IMPUESTO);
         System.out.println("Resultado b): "+impuesto2);
-        System.out.println("Resultado c) cociente: "+cociente);
+        System.out.printf("Resultado c) cociente: %.2f \n", cociente);
         System.out.println("Resultado c) resto: "+resto);
         System.out.println("Resultado d) nueve: "+nueve);
         System.out.println("Resultado d) postIncremento: "+postIncremento);
