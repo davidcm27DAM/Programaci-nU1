@@ -21,8 +21,15 @@ public class ReintegroSorteo {
 
     private static int pedirNumeroBoleto(){
         Scanner introducirNumero = new Scanner(System.in);
-        System.out.println("Introduce tu número de boleto: ");
-        int numBoleto = introducirNumero.nextInt();
+        int numBoleto;
+        do{
+            System.out.println("Introduce tu número de boleto: ");
+            numBoleto = introducirNumero.nextInt();
+            if (numBoleto > 99999 || numBoleto < 0){
+                System.out.println("El número es demasiado largo, vuelve a intentarlo. ");
+            }
+        } while (numBoleto > 99999 || numBoleto < 0);
+
         return numBoleto;
     }
 
@@ -36,11 +43,7 @@ public class ReintegroSorteo {
         char unidadesBoleto = textoBoleto.charAt(4);
         char decenasMillarBoleto = textoBoleto.charAt(0);
 
-        if (unidadesPremiado == unidadesBoleto || decenasMillarPremiado == decenasMillarBoleto) {
-            return true;
-        } else {
-            return false;
-        }
+        return unidadesPremiado == unidadesBoleto || decenasMillarPremiado == decenasMillarBoleto;
     }
 }
 
