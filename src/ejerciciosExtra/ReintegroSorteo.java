@@ -19,27 +19,35 @@ public class ReintegroSorteo {
         }
     }
 
-    private static int pedirNumeroBoleto(){
+    private static int pedirNumeroBoleto() {
         Scanner introducirNumero = new Scanner(System.in);
-        int numBoleto;
-        int i;
-        do{
+        String numBoletoTeclado = "-1";
+        boolean numeroCorrecto = false;
+        do {
             System.out.println("Introduce tu número de boleto: ");
-            String numBoletoTeclado = introducirNumero.nextLine();
-            /*
-            for (i = 0, i <= numBoletoTeclado.length(), i++){
-                numBoletoTeclado.isLetter(i);
-            }
-            */
+            numBoletoTeclado = introducirNumero.nextLine();
+            numeroCorrecto = comprobarInputEsCorrecto(numBoletoTeclado);
 
-            numBoleto = Integer.parseInt(numBoletoTeclado);
-            if (numBoleto > 99999 || numBoleto < 0){
-                System.out.println("El número es demasiado largo, vuelve a intentarlo. ");
-            }
-        } while (numBoleto > 99999 || numBoleto < 0);
+        } while (!numeroCorrecto);
 
-        return numBoleto;
+        return Integer.parseInt(numBoletoTeclado);
     }
+
+    private static boolean comprobarInputEsCorrecto(String numBoletoTeclado){
+        char[] tecladoArray = numBoletoTeclado.toCharArray();
+        for (char caracter: tecladoArray){
+            if (!(Character.isDigit(caracter))){
+                System.out.println("Has introducido un carácter inválido ");
+                return false;
+            }
+        }
+        if (numBoletoTeclado.length() > 5){
+            System.out.println("El número que has introducido es demasiado largo! Vuelve a introducirlo. ");
+            return false;
+        }
+        return true;
+    }
+
 
     private static boolean comprobarReintegro(int premiado, int boleto) {
 

@@ -15,7 +15,7 @@ public class OperadoresComparacion {
         System.out.println("a): " + (edadJuan < 18));
         System.out.println("b): " + (edadJuan == edadPedro));
         System.out.println("c): " + (edadJulio > edadPedro));
-        System.out.println("d): " + ((hipotenusa*hipotenusa) == ((cateto1+cateto2)*(cateto1+cateto2))));
+        System.out.println("d): " + (Math.pow(hipotenusa, 2) == (Math.pow((cateto1+cateto2),2))));
         System.out.println("e): " + (cateto1>cateto2));
         System.out.println("f): " + (contador == 8));
         System.out.println("g): " + (contador != 8));
