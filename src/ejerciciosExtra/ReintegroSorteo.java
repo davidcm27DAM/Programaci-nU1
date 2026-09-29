@@ -48,7 +48,6 @@ public class ReintegroSorteo {
         return true;
     }
 
-
     private static boolean comprobarReintegro(int premiado, int boleto) {
 
         String textoPremiado = String.valueOf(premiado);
