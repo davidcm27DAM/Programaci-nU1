@@ -33,15 +33,15 @@ public class ReintegroSorteo {
         return Integer.parseInt(numBoletoTeclado);
     }
 
-    private static boolean comprobarInputEsCorrecto(String numBoletoTeclado){
+    private static boolean comprobarInputEsCorrecto(String numBoletoTeclado) {
         char[] tecladoArray = numBoletoTeclado.toCharArray();
-        for (char caracter: tecladoArray){
-            if (!(Character.isDigit(caracter))){
+        for (char caracter : tecladoArray) {
+            if (!(Character.isDigit(caracter))) {
                 System.out.println("Has introducido un carácter inválido ");
                 return false;
             }
         }
-        if (numBoletoTeclado.length() > 5){
+        if (numBoletoTeclado.length() > 5) {
             System.out.println("El número que has introducido es demasiado largo! Vuelve a introducirlo. ");
             return false;
         }
