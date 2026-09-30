@@ -9,7 +9,8 @@ public class AdivinarNumero {
     public static void main(String[] args) {
         Random randomNumGen = new Random();
         final int randomNum = randomNumGen.nextInt(101);
-        int playerNum;
+        String playerNum;
+        int gameNum;
         boolean acierto = false;
         boolean desiste = false;
 
@@ -17,27 +18,33 @@ public class AdivinarNumero {
 
         do {
             playerNum = pedirNumero();
-            if (playerNum == randomNum) {
-                acierto = true;
-            } else if (playerNum < 0) {
+            gameNum = Integer.parseInt(playerNum);
+            if (checkNegative(playerNum)) {
                 desiste = true;
+            } else if (gameNum == randomNum) {
+                acierto = true;
             } else {
-                System.out.println("No es correcto! Vuelve a intentarlo!");
+                System.out.println("No es correcto! ");
+                if (gameNum > randomNum) {
+                    System.out.println("El número que has introducido es demasiado grande! ");
+                } else {
+                    System.out.println("El número que has introducido es demasiado pequeño! ");
+                }
+                System.out.println("Vuelve a intentarlo! ");
             }
-        } while (acierto || desiste);
+        } while (!(acierto || desiste));
 
         if (acierto) {
             System.out.println("Enhorabuena! Has acertado el número " + randomNum);
         } else if (desiste) {
-            System.out.println("Lo sentimos, más suerte la próxima vez. ");
+            System.out.println("Sentimos que abandones, más suerte la próxima vez. ");
         } else {
-            System.out.println();
+            System.out.println("Has conseguido salir del sistema mediante una acción no prevista. ");
         }
-
 
     }
 
-    private static int pedirNumero() {
+    private static String pedirNumero() {
 
         String numTeclado = "-1";
         boolean numeroEsCorrecto = false;
@@ -48,23 +55,33 @@ public class AdivinarNumero {
 
         } while (!numeroEsCorrecto);
 
-        return Integer.parseInt(numTeclado);
+        return numTeclado;
     }
 
-    private static boolean comprobarInputEsCorrecto(String numBoletoTeclado) {
-        char[] tecladoArray = numBoletoTeclado.toCharArray();
+    private static boolean comprobarInputEsCorrecto(String numTeclado) {
+        char[] tecladoArray = numTeclado.toCharArray();
         for (char caracter : tecladoArray) {
-            if (!(Character.isDigit(caracter))) {
+            if (!((Character.isDigit(caracter)) || numTeclado.charAt(0) == '-')) {
                 System.out.println("Has introducido un carácter inválido ");
                 return false;
             }
         }
-        if (numBoletoTeclado.length() > 5) {
+        if (numTeclado.length() > 3) {
             System.out.println("El número que has introducido es demasiado largo! Vuelve a introducirlo. ");
             return false;
         }
         return true;
     }
+
+    private static boolean checkNegative(String playerNum){
+        if (playerNum.charAt(0) == '-') {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
 }
 
 
