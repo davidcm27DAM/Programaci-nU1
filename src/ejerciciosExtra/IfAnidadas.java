@@ -10,16 +10,14 @@ public class IfAnidadas {
         System.out.println("Introduce un número: ");
         numTeclado = teclado.nextInt();
 
-        if (numTeclado > 5 || numTeclado < 1){
-
-        } else {
-            if (numTeclado == 1){
+        if (numTeclado <= 5 && numTeclado >= 1) {
+            if (numTeclado == 1) {
                 System.out.println("Enero ");
-            } else if (numTeclado == 2){
+            } else if (numTeclado == 2) {
                 System.out.println("Febrero ");
-            } else if (numTeclado == 3){
+            } else if (numTeclado == 3) {
                 System.out.println("Marzo ");
-            } else if (numTeclado == 4){
+            } else if (numTeclado == 4) {
                 System.out.println("Abril ");
             } else {
                 System.out.println("Mayo ");
@@ -27,7 +25,6 @@ public class IfAnidadas {
 
             /*
             switch (numTeclado){
-
                 case 1:
                     System.out.println("Enero ");
                 case 2:
