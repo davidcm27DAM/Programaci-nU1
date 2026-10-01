@@ -66,8 +66,8 @@ public class AdivinarNumero {
                 return false;
             }
         }
-        if (numTeclado.length() > 3) {
-            System.out.println("El número que has introducido es demasiado largo! Vuelve a introducirlo. ");
+        if (Integer.parseInt(numTeclado) > 100) {
+            System.out.println("El número que has introducido es mayor que 100! Vuelve a introducirlo, esta vez de 0 a 100. ");
             return false;
         }
         return true;
