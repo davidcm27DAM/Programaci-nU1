@@ -12,7 +12,7 @@ public class Comprobacion {
             if (numero % 2 == 0) {
                 System.out.println("Número es par ");
             } else {
-                System.out.println("Númerp impar");
+                System.out.println("Número impar");
             }
         } else {
             System.out.println("Error, no has introducido un entero. ");
